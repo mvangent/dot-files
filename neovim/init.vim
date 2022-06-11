@@ -22,6 +22,9 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ayu-theme/ayu-vim'
 
+" Git
+Plug 'tpope/vim-fugitive'
+
 " Lsp
 Plug 'neovim/nvim-lspconfig'
 call plug#end()
@@ -54,3 +57,4 @@ nnoremap <leader>y "+y
 nnoremap <leader>Y gg"+yG
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+nnoremap <leader>g :Git
