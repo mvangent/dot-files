@@ -21,8 +21,18 @@ Plug 'nvim-telescope/telescope.nvim'
 " Styling
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ayu-theme/ayu-vim'
+
+" Lsp
+Plug 'neovim/nvim-lspconfig'
 call plug#end()
 
+" Lsp setup Golang
+lua require("lsp_config_golang")
+
+autocmd BufWritePre *.go lua vim.lsp.buf.formatting()
+autocmd BufWritePre *.go lua goimports(1000)
+
+"Theme configuration
 let ayucolor="dark"
 colorscheme ayu
 
@@ -44,4 +54,3 @@ nnoremap <leader>y "+y
 nnoremap <leader>Y gg"+yG
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
-
